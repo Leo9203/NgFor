@@ -1,0 +1,22 @@
+<form id="datiRichiesta"  (submit)="submit()">
+  <div class="form-group" *ngFor="let d of pregunta">
+    <label for="">{{d.placeholder}}</label>
+    <div *ngFor="let e of respuesta">
+      <input type="radio" id="{{d.name}}" name="{{d.name}}"  
+      checked [value]="e.name" [(ngModel)]="model[d.placeholder]"
+        /> 
+      <label >{{e.name}}</label>
+
+
+    <!--  <input type="radio" 
+          class="form-control" 
+          placeholder="{{d.placeholder}}" 
+          [(ngModel)]="model[d.placeholder+e.modelPropName]"
+          name="{{d.name+e.name}}"
+          />-->
+      </div>
+  </div>
+  <button>Submit</button>
+</form>
+
+<router-outlet></router-outlet>
